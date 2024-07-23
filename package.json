@@ -1,0 +1,25 @@
+{
+  "name": "next-storyblok",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev & npm run ssl-proxy",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "ssl-proxy": "local-ssl-proxy --source 3010 --target 3000 --cert ./cert.crt --key ./cert.key"
+  },
+  "dependencies": {
+    "@storyblok/react": "^3.0.10",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "local-ssl-proxy": "^2.0.5",
+    "typescript": "^5"
+  }
+}
