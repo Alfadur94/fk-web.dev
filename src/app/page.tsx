@@ -1,21 +1,23 @@
-// import { getStoryblokApi } from "@storyblok/react/rsc";
-import {getStoryblokApi, StoryblokStory} from "@storyblok/react/rsc";
-
-
-
+import { getStoryblokApi, StoryblokStory, StoryblokComponent } from "@storyblok/react/rsc";
+import styles from '../../styles/Home.module.css';
 export default async function Home() {
     const { data } = await fetchData();
 
+    const body = data.story.content.body;
+
     return (
-        <div>
-            <StoryblokStory story={data.story} />
-        </div>
+        <main className={styles.main}>
+
+            {body.map((element:any) => {
+                return <StoryblokComponent blok={element} key={element._uid}/>
+            })}
+        </main>
     );
 }
 
 export async function fetchData() {
-    let sbParams: object = { version: "draft" };
     const storyblokApi = getStoryblokApi();
+    let sbParams: object = { version: "draft" };
 
-    return storyblokApi.get(`cdn/stories/home`, sbParams, {cache: "no-store"});
+    return storyblokApi.get('cdn/stories/home', sbParams, { cache: 'no-store' });
 }
