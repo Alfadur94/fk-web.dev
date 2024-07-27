@@ -1,0 +1,6 @@
+:root {
+  @include generate-theme-colors;
+  @include generate-theme-gradients;
+
+  --theme-colors-text-color: var(--theme-color-grey);
+}
