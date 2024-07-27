@@ -3,10 +3,12 @@ import StoryblokProvider from "../../components/StoryblokProvider";
 import React from "react";
 import Hero from "../../components/Hero";
 import ProjectCard from "../../components/ProjectCard";
+import ProjectOverview from "../../components/ProjectOverview";
 
 const components = {
     hero: Hero,
     projectCard: ProjectCard,
+    projectOverview: ProjectOverview
 }
 
 storyblokInit({
