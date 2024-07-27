@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ssl-proxy": "local-ssl-proxy --source 3010 --target 3000 --cert ./cert.crt --key ./cert.csr"
+    "ssl-proxy": "local-ssl-proxy --source 3010 --target 3000"
   },
   "dependencies": {
     "@storyblok/react": "^3.0.10",
