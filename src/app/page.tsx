@@ -20,7 +20,7 @@ export default async function Home() {
     );
 }
 
-export async function fetchData() {
+async function fetchData() {
     const storyblokApi = getStoryblokApi();
     let sbParams: object = {
         version: "draft",
