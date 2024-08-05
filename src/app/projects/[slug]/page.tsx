@@ -15,7 +15,7 @@ export default async function Project(params:any) {
     );
 }
 
-export async function fetchData(slug:any) {
+async function fetchData(slug:any) {
     const storyblokApi = getStoryblokApi();
     let sbParams: object = { version: "draft" };
 
