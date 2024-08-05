@@ -7,7 +7,7 @@
 @import "vendor/main";
 
 body {
-  background-color: #121212;
+  background: var(--theme-gradient-black-muted);
   font-family: Arial, sans-serif;
   color: white;
   margin: 0;
