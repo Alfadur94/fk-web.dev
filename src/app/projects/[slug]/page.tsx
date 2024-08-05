@@ -1,6 +1,6 @@
 import {getStoryblokApi, StoryblokComponent} from "@storyblok/react/rsc";
 
-export default async function Project({params, story}) {
+export default async function Project(params:any) {
     const {data} = await fetchData(params.slug);
     const body = data.story;
 
@@ -15,7 +15,7 @@ export default async function Project({params, story}) {
     );
 }
 
-export async function fetchData(slug) {
+export async function fetchData(slug:any) {
     const storyblokApi = getStoryblokApi();
     let sbParams: object = { version: "draft" };
 

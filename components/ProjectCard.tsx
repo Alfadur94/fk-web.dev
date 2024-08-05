@@ -6,14 +6,13 @@ interface IProjectCardProps {
 }
 
 
-const ProjectCard: React.FC<ProjectCardProps> = ( props:any ) => {
+const ProjectCard: React.FC<IProjectCardProps> = ( props :any ) => {
     const baseClass = 'project-card'
 
     return (
         <div className={`${baseClass}`}>
-            {JSON.stringify(props)}
             <div className={`${baseClass}__image`}>
-                <img src={props.image?.filename} />
+                <img src={props.image?.filename}/>
             </div>
             <div className={`${baseClass}__title`}>
                 <h3>{props.title}</h3>

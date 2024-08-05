@@ -2,6 +2,7 @@ interface HeroProps {
     content: {
         headline: string;
         content: string;
+        image: string;
     };
 }
 
@@ -10,11 +11,16 @@ const Hero: React.FC<HeroProps> = ( {blok}:any ) => {
 
     return (
         <div className={`${baseClass}`}>
-            <div className={`${baseClass}__headline`}>
-                <h1>{blok.headline}</h1>
+            <div className={`${baseClass}__text-content`}>
+                <div className={`${baseClass}__headline`}>
+                    <h1>{blok.headline}</h1>
+                </div>
+                <div className={`${baseClass}__content`}>
+                    <p>{blok.content}</p>
+                </div>
             </div>
-            <div className={`${baseClass}__content`}>
-                <p>{blok.content}</p>
+            <div className={`${baseClass}__image`}>
+                <img src={blok.image?.filename}/>
             </div>
         </div>
     );
