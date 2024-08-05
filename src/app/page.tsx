@@ -3,16 +3,17 @@ import { getStoryblokApi, StoryblokStory, StoryblokComponent } from "@storyblok/
 import '../../styles/main.scss';
 
 export default async function Home() {
-    const { data } = await fetchData();
+    const response  = await fetchData();
 
-    const body = data.story.content.body;
+    if (!response) {
+        return <div>Failed to load content</div>;
+    }
+
+    const body = response.data.story.content.body;
+
 
     return (
         <main className={'test'}>
-            <pre>
-                {/*{JSON.stringify(data, null, 2)}*/}
-            </pre>
-
             {body.map((element:any) => {
                 return <StoryblokComponent blok={element} key={element._uid}/>
             })}
@@ -27,5 +28,11 @@ async function fetchData() {
         resolve_relations: "projectOverview.projects"
     };
 
-    return storyblokApi.get('cdn/stories/home', sbParams, { cache: 'no-store' });
+    try {
+        const data =  storyblokApi.get('cdn/stories/home', sbParams);
+        return data || null;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }

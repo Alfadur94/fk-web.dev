@@ -19,5 +19,5 @@ async function fetchData(slug:any) {
     const storyblokApi = getStoryblokApi();
     let sbParams: object = { version: "draft" };
 
-    return storyblokApi.get(`cdn/stories/projects/${slug}`, sbParams, { cache: 'no-store' });
+    return storyblokApi.get(`cdn/stories/projects/${slug}`, sbParams);
 }

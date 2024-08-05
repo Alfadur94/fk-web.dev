@@ -2,7 +2,7 @@
 
 import ProjectCard from "./ProjectCard";
 // @ts-ignore
-import {Splide, SplideSlide} from "rgot-react-splide";
+import {Splide, SplideSlide} from "@splidejs/react-splide";
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 const ProjectOverview = ({blok}: any) => {

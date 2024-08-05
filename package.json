@@ -10,6 +10,7 @@
     "ssl-proxy": "local-ssl-proxy --source 3010 --target 3000"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "@storyblok/react": "^3.0.10",
     "next": "14.2.5",
     "react": "^18",
