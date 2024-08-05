@@ -1,0 +1,29 @@
+@mixin media($min-res) {
+  $breakpoint: map-get($breakpoints, $min-res);
+
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-between($min-res, $max-res) {
+  $breakpoint-min: map-get($breakpoints, $min-res);
+  $breakpoint-max: map-get($breakpoints, $max-res);
+
+  @media only screen and (min-width: $breakpoint-min) and (max-width: ($breakpoint-max - 1)) {
+    @content;
+  }
+}
+
+// sass-lint:disable-block no-vendor-prefixes
+@mixin media-browser-ie-11 {
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin media-print-hide {
+  @media print {
+    display: none !important; // sass-lint:disable-line no-important
+  }
+}

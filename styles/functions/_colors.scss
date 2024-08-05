@@ -1,4 +1,6 @@
 @mixin generate-theme-colors() {
+  // --theme-color-neongreen
+
   @each $name, $value in $palettes {
     #{"--theme-color-" + ($name)}: #{$value};
   }
@@ -7,8 +9,12 @@
 @mixin generate-theme-gradients() {
   @each $primaryName, $primaryValue in $palettes {
     @each $secondaryName, $secondaryValue in $palettes {
+      // --theme-gradient-primary-secondary
+
       #{"--theme-gradient-" + ($primaryName)  + "-" + ($secondaryName)}:
-              linear-gradient(47deg, #{$primaryValue} 1.54%, #{$secondaryValue} 100%);
+
+              linear-gradient( 90deg, #{$primaryValue} 1.54%, #{$secondaryValue} 100%);
+
     }
   }
 }

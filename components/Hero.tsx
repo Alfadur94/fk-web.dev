@@ -1,3 +1,5 @@
+import ResponsiveImage from "../atoms/ResponsiveImage";
+
 interface HeroProps {
     content: {
         headline: string;
@@ -20,7 +22,7 @@ const Hero: React.FC<HeroProps> = ( {blok}:any ) => {
                 </div>
             </div>
             <div className={`${baseClass}__image`}>
-                <img src={blok.image?.filename}/>
+                <ResponsiveImage {...blok.image} />
             </div>
         </div>
     );

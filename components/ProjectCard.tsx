@@ -1,3 +1,5 @@
+import ResponsiveImage from "../atoms/ResponsiveImage";
+
 interface IProjectCardProps {
     title: string;
     description: string;
@@ -12,7 +14,9 @@ const ProjectCard: React.FC<IProjectCardProps> = ( props :any ) => {
     return (
         <div className={`${baseClass}`}>
             <div className={`${baseClass}__image`}>
-                <img src={props.image?.filename}/>
+                <ResponsiveImage {...props.image} />
+
+                {/*<img src={props.image?.filename}/>*/}
             </div>
             <div className={`${baseClass}__title`}>
                 <h3>{props.title}</h3>
